@@ -37,9 +37,9 @@ public class LoginPage extends BaseTest {
         return driver.getTitle();
     }
     
-    public boolean validateCRMImage(){
+/*    public boolean validateCRMImage(){
         return crmLogo.isDisplayed();        
-    }
+    }*/
     
     //public HomePage login(String uName, String pWord) throws InterruptedException{
     public HomePage login(String uName, String pWord) throws Exception{
