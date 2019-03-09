@@ -21,7 +21,7 @@ public class TestUtil extends BaseTest {
     public static long PAGE_LOAD_TIMEOUT =40;
     public static long IMPLICIT_WAIT = 40;
     //For Reading Data. Excel Sheet Path
-    public static String TESTDATA_SHEET_PATH =System.getProperty("user.dir")+"\\src\\main\\java\\com\\crm\\qa\\testdata\\ExcelData.xlsx";
+    public static String TESTDATA_SHEET_PATH =System.getProperty("user.dir")+"\\src\\main\\java\\com\\qa\\crm\\testdata\\ExcelData.xlsx";
         
     static Workbook book;
     static Sheet sheet;
@@ -76,15 +76,6 @@ public class TestUtil extends BaseTest {
     
     
     
-
-
-
-
-
-
-
-
-
 
 
 

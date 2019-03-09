@@ -26,7 +26,7 @@ public class BaseTest {
         try{
             prop = new Properties();
             //FileInputStream ip = new FileInputStream("/Proj_FreeCRMTest/src/main/java/com/crm/config/config.properties");
-            FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/crm/qa/config/config.properties");
+            FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/qa/crm/config/config.properties");
             prop.load(ip);
         }catch(FileNotFoundException e){
             e.printStackTrace();
@@ -42,7 +42,7 @@ public class BaseTest {
             driver = new ChromeDriver();                
         }
         else if(browserName.equals("FF")){
-            System.setProperty("webdriver.gecko.driver", "C:/AllDrivers/geckoDriver/geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "C:/AllDrivers/NewGeckoDriver/geckodriver.exe");
             driver = new FirefoxDriver();
         }
         
