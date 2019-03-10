@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.crm.base.BaseTest;
 import com.qa.crm.util.TestUtil;
@@ -33,11 +35,11 @@ public class HomePage extends BaseTest {
     
     
     //Methods
-    public String verifyHomePageTitle(){
+    public String verifyHomePageTitle() throws Exception{
         ////////////
         TestUtil testUtil = new TestUtil();
         testUtil.waitForPageToLoad();
-        //////////////
+        testUtil.wait(4);
         return driver.getTitle();        
     }
     
