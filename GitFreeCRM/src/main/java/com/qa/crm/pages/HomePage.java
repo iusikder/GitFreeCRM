@@ -12,8 +12,9 @@ import com.qa.crm.util.TestUtil;
 
 
 public class HomePage extends BaseTest {
-    @FindBy(xpath="//td[@class='headertext']")
-    WebElement userNameLabel;
+
+	@FindBy(xpath="//td[@class='headertext']")
+	WebElement userNameLabel;
     
     @FindBy(xpath="//a[contains(text(),'Contacts')]")
     WebElement contactsLink;
@@ -25,33 +26,41 @@ public class HomePage extends BaseTest {
     WebElement dealsLink;
     
     @FindBy(xpath="//a[contains(text(),'Tesks')]")
-    WebElement tasksLink;
-    
+    WebElement tasksLink;    
+     
     //Initializing the Page Objects....
     public HomePage(){
         PageFactory.initElements(driver, this);
     }
     
+    TestUtil testUtil = new TestUtil();
     
     
     //Methods
     public String verifyHomePageTitle() throws Exception{
         ////////////
-        TestUtil testUtil = new TestUtil();
+       // TestUtil testUtil = new TestUtil();
         testUtil.waitForPageToLoad();
         testUtil.wait(4);
         return driver.getTitle();        
     }
     
-    public boolean verifyCorrectUserName(){
+    public boolean verifyCorrectUserName() throws Exception{
+      /*  testUtil.waitForPageToLoad();
+        testUtil.wait(4);*/
+        
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(userNameLabel));
         return userNameLabel.isDisplayed();
     }
+    
     public ContactsPage clickOnContactsLink(){
         contactsLink.click();
         return new ContactsPage();
     }
     
     public DealsPage clickOnDealsLink(){
+    	//Thread.sleep(4000);
         dealsLink.click();
         return new DealsPage();        
     }

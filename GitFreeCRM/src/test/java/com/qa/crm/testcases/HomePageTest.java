@@ -1,7 +1,5 @@
 package com.qa.crm.testcases;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -39,19 +37,21 @@ public class HomePageTest extends BaseTest{
 		String actualHomePageTitle=homePage.verifyHomePageTitle();
 		Assert.assertEquals(actualHomePageTitle,"CRMPRO","Home page title not matched");
 	}
-	//NOTE:: TOMORROW I HAVE TO FIX REST OF THE TEST CASES. UNTIL NOW IT IS WORKING FINE.....
-/*	
+	
+	
 	@Test(priority=2)
-	public void verifyUserNameTest(){
+	public void verifyUserNameTest() throws Exception{
+        testUtil.wait(4);
 		testUtil.switchToFrame();
 		Assert.assertTrue(homePage.verifyCorrectUserName());
 	}
-	*/
-	/*@Test(priority=3)
-	public void verifyContactsLinkTest(){
+	
+	@Test(priority=3)
+	public void verifyContactsLinkTest() throws Exception{
+        testUtil.wait(4);
 		testUtil.switchToFrame();
 		contactsPage = homePage.clickOnContactsLink();
-	}*/
+	}
 	
 	
 	@AfterMethod
