@@ -32,6 +32,7 @@ public class ContactsPageTest extends BaseTest {
         testUtil = new TestUtil();
         contactsPage = new ContactsPage();
         homePage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+        Thread.sleep(4000);
         testUtil.switchToFrame();
         contactsPage = homePage.clickOnContactsLink();
     }
@@ -43,33 +44,23 @@ public class ContactsPageTest extends BaseTest {
     
     @Test(priority=2)
     public void selectSingleContactsTest(){
-        contactsPage.selectContactsByName("Shameem Hossain");
+        contactsPage.selectContactsByName("David Chris");
     }
     
     @Test(priority=3)
     public void selectMultipleContactsTest(){
-        contactsPage.selectContactsByName("Shameem Hossain");
-        contactsPage.selectContactsByName("test2 test2");
+        contactsPage.selectContactsByName("ABCD EFGH");
+        contactsPage.selectContactsByName("David Chris");
     }
-    
-    //@Test(priority=4, dataProvider="getCRMTestData")
-/*    public void validateCreateNewContact(String title, String fName, String lName, String company){
-        homePage.clickOnNewContactLink();
-        contactsPage.createNewContacts(title, fName, lName, company);
-    }   */   
-    
+
     @Test(priority=4, dataProvider="getCRMTestData")
     public void validateCreateNewContact(String title, String fName, String lName, String company){
-    homePage.clickOnNewContactLink();
-    contactsPage.createNewContacts(title, fName, lName, company);
-    homePage.clickOnContactsLink();
-    
-   // Assert.assertTrue(contactsPage.verifyContactsByName("ABCD EFG"));
-    
+	    homePage.clickOnNewContactLink();
+	    contactsPage.createNewContacts(title, fName, lName, company);
+	    homePage.clickOnContactsLink();    
+	   //Assert.assertTrue(contactsPage.verifyContactsByName("David Chris")); //I HAVE TO CHECK IT LATER   
     }    
-    // SAME ERROR IS COMING IN THIS TEST CASE ALSO. SO, I HAVE TO FIX IT TOMORROW..............
-    
-    
+
     
     @DataProvider
     public Object[][] getCRMTestData(){
@@ -79,7 +70,7 @@ public class ContactsPageTest extends BaseTest {
     
     @AfterMethod
     public void tearDown(){
-       driver.quit();
+      driver.quit();
   
     }
     

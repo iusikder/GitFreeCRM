@@ -42,19 +42,19 @@ public class LoginPage extends BaseTest {
     }
     
      public HomePage login(String uName, String pWord){
-        TestUtil testUtil = new TestUtil();////// I'm just checking
-       username.sendKeys(uName);
-        password.sendKeys(pWord);       
-           
-        //loginBtn.click();
-        testUtil.wait(4);
-    /*  Actions actions = new Actions(driver);
-        actions.click(loginBtn).perform();*/
-        
-        //Solution 2
-        //THIS JAVASCRIPT WORKED for the Radio Button also !!!!!
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);",(loginBtn));
+	        TestUtil testUtil = new TestUtil();////// I'm just checking
+	        username.sendKeys(uName);
+	        password.sendKeys(pWord);       
+	           
+	        //loginBtn.click();
+	        testUtil.wait(4);
+	    /*  Actions actions = new Actions(driver);
+	        actions.click(loginBtn).perform();*/
+	        
+	        //Solution 2
+	        //THIS JAVASCRIPT WORKED for the Radio Button also !!!!!
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);",(loginBtn));
         return new HomePage();  //After Login it will return HomePage Object.
     }
         

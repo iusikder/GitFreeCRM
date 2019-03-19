@@ -4,24 +4,15 @@
   <listeners>
     <listener class-name="com.qa.ExtentReportListener.ExtentReportListener"/>
   </listeners>
-  <test name="Free CRM App Test Cases(failed)">
+  <test thread-count="5" name="Free CRM App Test Cases(failed)">
     <classes>
-      <class name="com.qa.crm.testcases.HomePageTest">
+      <class name="com.qa.crm.testcases.ContactsPageTest">
         <methods>
-          <include name="verifyHomePageTitleTest"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="verifyContactsLinkTest"/>
-          <include name="verifyUserNameTest"/>
-        </methods>
-      </class> <!-- com.qa.crm.testcases.HomePageTest -->
-      <class name="com.qa.crm.testcases.LoginPageTest">
-        <methods>
-          <include name="loginPageTitleTest"/>
-          <include name="setUp"/>
+          <include name="validateCreateNewContact"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.crm.testcases.LoginPageTest -->
+      </class> <!-- com.qa.crm.testcases.ContactsPageTest -->
     </classes>
   </test> <!-- Free CRM App Test Cases(failed) -->
 </suite> <!-- Failed suite [Free CRM Application Test Automation Test Suite] -->

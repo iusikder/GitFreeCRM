@@ -30,7 +30,8 @@ public class TestUtil extends BaseTest {
     
     //-----------------------FUCNTIONS----------------------------------------   
     
-    
+    //There is something WRONG with this Method. Because, when I call this
+    //Method then it is giving error Message, but when I am using "Thread.sleep" then it is working...
     public void wait (int time){
         try {
             Thread.sleep(time*1000);

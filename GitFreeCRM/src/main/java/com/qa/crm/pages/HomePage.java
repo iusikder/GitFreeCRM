@@ -38,29 +38,25 @@ public class HomePage extends BaseTest {
     
     //Methods
     public String verifyHomePageTitle() throws Exception{
-        ////////////
-       // TestUtil testUtil = new TestUtil();
         testUtil.waitForPageToLoad();
-        testUtil.wait(4);
+        Thread.sleep(4000);
         return driver.getTitle();        
     }
     
-    public boolean verifyCorrectUserName() throws Exception{
-      /*  testUtil.waitForPageToLoad();
-        testUtil.wait(4);*/
-        
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+    public boolean verifyCorrectUserName() throws Exception{        
+        WebDriverWait wait = new WebDriverWait(driver, 40);
         wait.until(ExpectedConditions.visibilityOf(userNameLabel));
         return userNameLabel.isDisplayed();
     }
     
     public ContactsPage clickOnContactsLink(){
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(ExpectedConditions.visibilityOf(contactsLink));
         contactsLink.click();
         return new ContactsPage();
     }
     
     public DealsPage clickOnDealsLink(){
-    	//Thread.sleep(4000);
         dealsLink.click();
         return new DealsPage();        
     }
